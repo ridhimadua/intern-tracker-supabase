@@ -1,0 +1,285 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f7fa;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.app-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.app-header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  width: 100%;
+}
+
+/* Add intern section */
+.add-intern-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+  margin-bottom: 3rem;
+}
+
+.add-intern-section h2 {
+  margin-bottom: 1.5rem;
+  color: #2d3748;
+  font-size: 1.5rem;
+}
+
+.add-intern-form {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.intern-input {
+  flex: 1;
+  min-width: 250px;
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.intern-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.add-button {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-button:hover {
+  background: #5a67d8;
+}
+
+/* Interns section */
+.interns-section h2 {
+  margin-bottom: 2rem;
+  color: #2d3748;
+  font-size: 1.5rem;
+}
+
+.no-interns {
+  background: white;
+  padding: 3rem;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+}
+
+.no-interns p {
+  color: #718096;
+  font-size: 1.1rem;
+}
+
+/* Interns grid */
+.interns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Intern card */
+.intern-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.intern-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.12);
+}
+
+.intern-info {
+  margin-bottom: 1.5rem;
+}
+
+.intern-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 0.75rem;
+}
+
+.intern-status {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Status badges */
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.status-badge.active {
+  background: #c6f6d5;
+  color: #22543d;
+}
+
+.status-badge.inactive {
+  background: #fed7d7;
+  color: #742a2a;
+}
+
+.leave-badge {
+  background: #fef5e7;
+  color: #744210;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Action buttons */
+.intern-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.status-button, .leave-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.status-button.active {
+  background: #fc8181;
+  color: white;
+}
+
+.status-button.active:hover {
+  background: #f56565;
+}
+
+.status-button.inactive {
+  background: #68d391;
+  color: white;
+}
+
+.status-button.inactive:hover {
+  background: #48bb78;
+}
+
+.leave-button.available {
+  background: #fbb6ce;
+  color: #702459;
+}
+
+.leave-button.available:hover {
+  background: #f687b3;
+}
+
+.leave-button.on-leave {
+  background: #90cdf4;
+  color: #2a4365;
+}
+
+.leave-button.on-leave:hover {
+  background: #63b3ed;
+}
+
+/* Loading and error states */
+.loading, .error {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.1rem;
+}
+
+.error {
+  color: #e53e3e;
+  background: #fed7d7;
+  border-radius: 8px;
+  margin: 2rem;
+}
+
+/* Footer */
+.app-footer {
+  background: #2d3748;
+  color: #cbd5e0;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 2rem;
+  }
+  
+  .main-content {
+    padding: 1rem;
+  }
+  
+  .add-intern-form {
+    flex-direction: column;
+  }
+  
+  .intern-input {
+    min-width: 100%;
+  }
+  
+  .interns-grid {
+    grid-template-columns: 1fr;
+  }
+} 
